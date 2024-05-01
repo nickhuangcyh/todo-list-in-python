@@ -7,17 +7,17 @@ action = '0'
 @dataclass
 class ToDoItemData:
     name: str
-    isChecked: bool
+    is_checked: bool
 
-    def getCheckedIconStr(self):
-        if self.isChecked:
+    def get_checked_icon_str(self):
+        if self.is_checked:
             return "v"
         else:
             return " "
 
 
 def add_todo_item(todo_item):
-    todo_list.append(ToDoItemData(name=todo_item, isChecked=False))
+    todo_list.append(ToDoItemData(name=todo_item, is_checked=False))
     print("The to-do item has been added: " + todo_item)
 
 
