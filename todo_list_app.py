@@ -1,19 +1,7 @@
-from dataclasses import dataclass
+from to_do_item_data import ToDoItemData
 
 todo_list = []
 action = '0'
-
-
-@dataclass
-class ToDoItemData:
-    name: str
-    is_checked: bool
-
-    def get_checked_icon_str(self):
-        if self.is_checked:
-            return "v"
-        else:
-            return " "
 
 
 def add_todo_item(todo_item):
@@ -28,7 +16,7 @@ def view_todo_list():
         print("no to-do list")
     else:
         for i, todo in enumerate(todo_list, start=1):
-            print(f"[{todo.getCheckedIconStr()}] {i}. {todo.name} ")
+            print(f"[{todo.get_checked_icon_str()}] {i}. {todo.name} ")
     print("==============================")
 
 
@@ -41,12 +29,12 @@ def delete_todo_item(todo_item_no):
 
 
 def check_todo_item(todo_item_no):
-    todo_list[int(todo_item_no) - 1].isChecked = True
+    todo_list[int(todo_item_no) - 1].is_checked = True
     print("The to-do item has been checked: " + todo_list[int(todo_item_no) - 1].name)
 
 
 def uncheck_todo_item(todo_item_no):
-    todo_list[int(todo_item_no) - 1].isChecked = False
+    todo_list[int(todo_item_no) - 1].is_checked = False
     print("The to-do item has been unchecked: " + todo_list[int(todo_item_no) - 1].name)
 
 
