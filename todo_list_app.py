@@ -1,8 +1,5 @@
 from to_do_item_data import ToDoItemData
-
-todo_list = []
-action = '0'
-
+from typing import List
 
 def add_todo_item(todo_item):
     todo_list.append(ToDoItemData(name=todo_item, is_checked=False))
@@ -73,4 +70,6 @@ def main(action, todo_list):
 
 
 if __name__ == '__main__':
+    todo_list: list = []
+    action = '0'
     main(action, todo_list)
